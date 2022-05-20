@@ -1,0 +1,409 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --textpaleViolet:hsl(276, 100%, 81%);
+    --textmoderateViolet:hsl(276, 55%, 52%);
+    --textDesaturatedDarkViolet:hsl(271, 15%, 43%);
+    --textGrayishBlue:hsl(206, 6%, 79%);
+    --textVeryDarkDesaturatedViole:hsl(271, 36%, 24%);
+    --textDarkGrayishViolet:hsl(270, 7%, 64%);
+    --gradientsLightMagenta:hsl(293, 100%, 63%);
+    --gradientsLightViolet:hsl(264, 100%, 61%);
+    --secondaryWhite:hsl(0, 0%, 100%);
+    --secondaryLightGrayishViolet:hsl(270, 20%, 96%);
+    --secondaryVeryDarkDesaturatedViolet:hsl(271, 36%, 24%);
+    --secondaryVeryLightMagenta:hsl(289, 100%, 72%);
+    --fontsize:16px;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.main {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    background-color: var(--secondaryWhite);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+@media (max-width: 767px) {
+    .main {
+        height: 100%;
+    }
+}
+
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -73px;
+    width: 430px;
+    height: 90%;
+    background: linear-gradient(to right, var(--gradientsLightViolet), var(--gradientsLightMagenta));
+    z-index: -1;
+    border-radius: 0 0 200px 200px;
+    max-width: 100%;
+    
+}
+
+.main::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -73px;
+    width: 430px;
+    height: 90%;
+    background-color: var(--secondaryLightGrayishViolet);
+    z-index: -1;
+    border-radius: 200px 200px 0 0;
+    max-width: 100%;
+}
+
+@media (max-width: 767px) {
+    .main::before {
+        top: -50%;
+    }
+    .main::after {
+        bottom: -50%;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+        gap: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+.border {
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 3px 20px #00000020;
+}
+
+.border .phone {
+    flex-basis: 18%;
+}
+
+.phone .person {
+    background: linear-gradient(to right, var(--gradientsLightViolet), var(--gradientsLightMagenta));
+    padding: 30px 10px 10px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.phone .person::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    background-color: var(--secondaryWhite);
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 16px 16px;
+}
+
+.phone .person .personinfo {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    position: relative;
+}
+
+.phone .person .personinfo::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -25px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent white transparent transparent;
+}
+
+
+.phone .person .personinfo::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20px;
+    border-style: solid;
+    border-width: 8px;
+    border-color: transparent var(--gradientsLightViolet) transparent transparent;
+}
+
+
+.phone .person .dots span {
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    position: relative;
+    border-radius: 50%;
+    right: -80px;
+    margin-bottom: 1px;
+    display: block;
+}
+
+.phone .person img {
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--secondaryWhite);
+}
+
+.phone .person .personinfo .name span {
+    display: block;
+    font-size: 10px;
+}
+
+.phone .person .personinfo .name {
+    margin-left: 10px;
+}
+
+.phone .person .personinfo .name span:first-child {
+    color: white;
+    font-weight: 700;
+}
+
+.phone .person .personinfo .name span:last-child {
+    color: var(--textpaleViolet);
+    font-size: 6px;
+}
+
+.chat {
+    background-color: var(--secondaryLightGrayishViolet);
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.send {
+    background-color: hsl(272deg 41% 93%);
+    padding: 6px;
+    border-radius: 6px;
+    color: var(--textmoderateViolet);
+}
+
+.receive {
+    background-color: var(--secondaryWhite);
+    padding: 6px;
+    border-radius: 6px;
+    margin: 6px 0 6px auto;
+    color: var(--textDesaturatedDarkViolet);
+    box-shadow: 0px 3px 20px #00000020;
+}
+
+.phone .chat p {
+    font-size: 10px;
+    width: 120px;
+    animation: phone 1s linear forwards;
+    /* transform: translateX(-300px); */
+}
+
+/* .phone .chat p:nth-of-type(2) {
+    animation-delay: .6s;
+}
+
+.phone .chat p:nth-of-type(3) {
+    animation-delay: 1.8s;
+}
+
+.phone .chat p:nth-of-type(4) {
+    animation-delay: 2.4s;
+}
+
+.phone .chat p:nth-of-type(5) {
+    animation-delay: 3s;
+} */
+
+img {
+    max-width: 100%;
+}
+
+.phone .chat .image {
+    margin: 6px 0 6px auto;
+    width: fit-content;
+    /* animation: phone 1s linear forwards;
+    animation-delay: 1.2s;
+    transform: translateX(-300px); */
+}
+
+.phone .chat .image img {
+    width: 39px;
+    border-radius: 10px;
+}
+
+
+.phone .offer {
+    display: flex;
+    font-size: 10px;
+    width: 150px;
+    justify-content: space-between;
+    background: linear-gradient(to left, var(--gradientsLightViolet), var(--gradientsLightMagenta));
+    padding: 10px;
+    margin-bottom: 6px;
+    border-radius: 6px 6px 6px 0;
+    /* animation: phone 1s linear forwards; */
+    /* animation-delay: 3.6s;
+    transform: translateX(-300px); */
+}
+
+.phone .offer .offerinfo {
+    display: flex;
+    align-items: center;
+}
+
+
+.phone .offer .offerinfo span:first-child {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--secondaryVeryLightMagenta);
+}
+
+.phone .offer .offerinfo span:last-child {
+    color: var(--textGrayishBlue);
+    font-size: 8px;
+    font-weight: 700;
+    margin-left: 16px;
+}
+
+.phone .offer .price {
+    color: var(--secondaryWhite);
+    font-weight: 700;
+}
+
+/* @keyframes phone {
+    0%,50% {
+        transform: translateX(-300px);
+    }
+    
+    100% {
+        transform: translateX(0);
+    }
+} */
+
+form {
+    position: relative;
+}
+
+form input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 30px;
+    margin-top: 10px;
+    color: var(--textmoderateViolet);
+    background-color: white;
+}
+
+form input[type="text"]::placeholder {
+    font-size: var(--fontsize);
+    color: var(--textGrayishBlue);
+    font-size: 10px;
+}
+
+.phone form a {
+    width: 23px;
+    height: 23px;
+    background-color: var(--secondaryVeryDarkDesaturatedViolet);
+    display: block;
+    position: absolute;
+    top: 39%;
+    right: 12px;
+    border-radius: 50%;
+    caret-color: var(--secondaryVeryDarkDesaturatedViolet);
+}
+
+.phone form a::before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 7px;
+    border-color: transparent transparent transparent white;
+    top: 4px;
+    right: -1px;
+}
+
+.phone form a::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 5px;
+    border-color: transparent transparent transparent var(--secondaryVeryDarkDesaturatedViolet);
+    top: 6px;
+    right: 4px;
+}
+
+.info {
+    flex-basis: 39%;
+}
+
+@media (max-width: 767px) {
+    .info {
+        text-align: center;
+    }
+}
+
+.info h1 {
+    color: var(--textDesaturatedDarkViolet);
+    font-weight: 700;
+}
+
+.info p {
+    color: var(--textDarkGrayishViolet);
+    font-weight: 400;
+    line-height: 1.6;
+}
