@@ -248,10 +248,10 @@ body {
     font-size: 10px;
     width: 120px;
     animation: phone 1s linear forwards;
-    /* transform: translateX(-300px); */
+    transform: translateX(-300px);
 }
 
-/* .phone .chat p:nth-of-type(2) {
+.phone .chat p:nth-of-type(2) {
     animation-delay: .6s;
 }
 
@@ -265,7 +265,7 @@ body {
 
 .phone .chat p:nth-of-type(5) {
     animation-delay: 3s;
-} */
+}
 
 img {
     max-width: 100%;
@@ -274,9 +274,9 @@ img {
 .phone .chat .image {
     margin: 6px 0 6px auto;
     width: fit-content;
-    /* animation: phone 1s linear forwards;
+    animation: phone 1s linear forwards;
     animation-delay: 1.2s;
-    transform: translateX(-300px); */
+    transform: translateX(-300px);
 }
 
 .phone .chat .image img {
@@ -294,9 +294,9 @@ img {
     padding: 10px;
     margin-bottom: 6px;
     border-radius: 6px 6px 6px 0;
-    /* animation: phone 1s linear forwards; */
-    /* animation-delay: 3.6s;
-    transform: translateX(-300px); */
+    animation: phone 1s linear forwards;
+    animation-delay: 3.6s;
+    transform: translateX(-300px);
 }
 
 .phone .offer .offerinfo {
@@ -325,7 +325,7 @@ img {
     font-weight: 700;
 }
 
-/* @keyframes phone {
+@keyframes phone {
     0%,50% {
         transform: translateX(-300px);
     }
@@ -333,7 +333,7 @@ img {
     100% {
         transform: translateX(0);
     }
-} */
+}
 
 form {
     position: relative;
